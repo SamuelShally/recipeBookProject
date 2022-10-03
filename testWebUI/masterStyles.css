@@ -11,14 +11,29 @@ body{
 .a,.b,.c,.d,.e{
 	background-color: #DEE2E6;
 	padding: 3%;
+    position: relative;
     
 	/* border: 1px solid white; */
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     border-radius: 25px;
 }
 
-.a h1{
-	text-align:left;
+.a h2{
+	/* text-align:left; */
+    display: inline-block;
+}
+
+.search{
+    position: absolute;
+    right : 10px;
+    /* text-align: right;    */
+    display: inline-block; 
+}
+
+.search input{
+    border-radius: 25px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .a{grid-area: a;}
