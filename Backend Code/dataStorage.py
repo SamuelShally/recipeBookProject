@@ -58,7 +58,15 @@ def add_recipe():
         else:
             return -1
 
-    
+    #same as exact string comparison, but not case sensitive
+    def exact_string_ignore_case(inputVal, lst):
+        lowerList = lst
+        lowerList = [item.lower() for item in lowerList]
+
+        if (inputVal in lowerList):
+            return lowerList.index(inputVal)
+        else:
+            return -1
 
 add_recipe()
 
