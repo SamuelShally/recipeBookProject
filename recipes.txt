@@ -1,11 +1,18 @@
-Name:
-Source:
-Process: 
+Name: Perfect Summer Fruit Salad
+Source: https://www.allrecipes.com/recipe/214947/perfect-summer-fruit-salad/
+Description: A easy fruit sald
+Ingredients: {⅔ cup fresh orange juice, ⅓ cup fresh lemon juice, ⅓ cup packed brown sugar, ½ teaspoon grated orange zest, ½ teaspoon grated lemon zest, 1 teaspoon vanilla extract, 2 cups cubed fresh pineapple, 2 cups strawberries, hulled and sliced, 3 kiwi fruit, peeled and sliced, 3 bananas, sliced, 2 oranges, peeled and sectioned, 1 cup seedless grapes, 2 cups blueberries}
+Instructions: [1] Bring orange juice, lemon juice, brown sugar, orange zest, and lemon zest to a boil in a saucepan over medium-high heat. Reduce heat to medium-low, and simmer until slightly thickened, about 5 minutes. Remove from heat, and stir in vanilla extract. Set aside to cool. [2] Layer the fruit in a large, clear glass bowl in this order: pineapple, strawberries, kiwi fruit, bananas, oranges, grapes, and blueberries. Pour the cooled sauce over the fruit. Cover and refrigerate for 3 to 4 hours before serving.
 
-Name: 
-Source: 
-Process: 
 
-Name: 
-Source: 
-Process: 
+Name: The Only Ice Cream Recipe You’ll Ever Need
+Source: https://cooking.nytimes.com/recipes/1016605-the-only-ice-cream-recipe-youll-ever-need
+Description: An easy ice cream recipe 
+Ingredients: {2 cups heavy cream, 1 cup whole milk, ⅔ cup sugar, ⅛ teaspoon fine sea salt, 6 large egg yolks} 
+Instructions: [1] In a small pot, simmer heavy cream, milk, sugar and salt until sugar completely dissolves, about 5 minutes. Remove pot from heat. In a separate bowl, whisk yolks. Whisking constantly, slowly whisk about a third of the hot cream into the yolks, then whisk the yolk mixture back into the pot with the cream. Return pot to medium-low heat and gently cook until mixture is thick enough to coat the back of a spoon (about 170 degrees on an instant-read thermometer). [2] Strain through a fine-mesh sieve into a bowl. Cool mixture to room temperature. Cover and chill at least 4 hours or overnight. Churn in an ice cream machine according to manufacturers’ instructions. Serve directly from the machine for soft serve, or store in freezer until needed.
+
+Name: Oven baken  Italian Sausage
+Source: https://brooklynfarmgirl.com/how-to-cook-sausage-in-the-oven/
+Description: How to oven cook italian sausages
+Ingredients: A pack of Italian Sausage (any size)
+Instructions: [1] Grab your sausage for this recipe.  1 pound, 2 pound, 5 pounds, it doesn’t matter.  Use whatever your favorite sausage is, for us it’s Sweet Italian Sausage.   This also works for breakfast sausage patties or any type of sausage links. [2] Take out your baking sheet (these are my favorite) and put parchment paper on it.  You can also use silicone baking mats.  Both parchment paper and silicone baking mats allow for easy cleanup. [3] Add sausage on top of parchment paper, single layer so they don’t touch. [4] Cook at 400 degrees, for 30 minutes, turning the sausage halfway through.  This will give the sausage those beautiful brown cooking marks on it. 
