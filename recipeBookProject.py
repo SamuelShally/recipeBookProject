@@ -3,7 +3,9 @@ import pprint
 
 def add_recipe():
     # we will be using dictionaries as the storage method of choice
+
     recipes = {}
+
     # { "recipe_name" : {
         #str "name" : str [string of name],
         #str "description" : str [description]
@@ -67,6 +69,54 @@ def add_recipe():
             return lowerList.index(inputVal)
         else:
             return -1
+
+    #gives more favorable ratings to strings that match from the beginning for a set prefix length
+    #we want to put in a string, if it matches a recipe great! if not, return the index of the recipe
+    #if not, then we have to find it
+    def similar_substring(inputVal, lst):
+
+        if (inputVal not in lst):
+            for val in lst:
+                if jaro.jaro_winkler_metric(inputVal, val) > .80 and jaro.jaro_winkler_metric(inputVal, val) < .99:
+                    answer = input("Did you mean " + val + "? (y/n): ")
+                    while answer not in ['y', 'n']:
+                        answer = input("Did you mean " + val + "? (y/n): ")
+                    if answer == 'y':
+                        return val
+                        break
+                else:
+                    
+
+        else:
+            return inputVal
+
+    def view_all(recipe, recipe_name):
+        print("Today we are cooking " + recipe[recipe_name]["name"])
+        print(recipe[recipe_name]["description"])
+        print("Ingredients")
+        for val in recipe[recipe_name]["ingredient_list"]:
+            print(val)
+
+        print("Instructions")
+        for val in recipe[recipe_name]["instructions"]:
+            print(val)
+
+    def view_step_by_step(recipe, recipe_name):
+        print("Today we are cooking " + recipe[recipe_name]["name"])
+        print(recipe[recipe_name]["description"])
+        print("Ingredients")
+        for val in recipe[recipe_name]["ingredient_list"]:
+            print(val)
+            input("Press enter to continue...")
+
+        print("Instructions")
+        for val in recipe[recipe_name]["instructions"]:
+            print(val)
+            input("Press enter to continue...")
+
+
+
+
 
     
 
