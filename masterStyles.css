@@ -3,15 +3,17 @@
 	src: url(OpenSans-Regular.ttf);
 }
 
+/*------Basic Alignment------*/
+
 body{
-	background-color: #F6E7CB;
+	background-color: #e5e8e2;
 	font-family:openSans-Regular;
     margin: 0%;
 }
 
-.a,.c,.d,.e{
-	background-color: #ADB5BD;
-	padding: 3%;
+.a, .b, .c,.d,.e{
+	background-color: #FEE9B8;
+	padding: 1%;
     position: relative;
     
 	/* border: 1px solid white; */
@@ -22,46 +24,50 @@ body{
 .a{
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
-    background-color: #678D58;
+    background-color: #F9AB82;
     position: relative;
+    padding: 1%;
 }
 
 .b{
-    border-radius: 0%;
+    margin: 0%;
     padding: 0%;
     position: relative;
-    background-color: #F6E7CB;
+    background-color: #f3e6c9;
 }
 
 .c{
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;
-    background-color: #678D58;
+    background-color: #F1432E;
 }
 
-.a h2{
-    color: white;
+/*--------Header--------*/
+
+.a h1{
+    padding-left: 5%;
+    font-family: "Times New Roman", Times, serif;
+    color: #f3e6c9;
     float: left;
 }
 
 #navbar{
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 2%;
 }
 
+#navbar ul li a{text-decoration:none}
+
 #navbar ul{
-    color: white;
-    padding-right: 200px;
+    padding-right: 240px;
     list-style: none;
     float: right;
 }
 
 #navbar li{
-    color: white;
+    color: #f3e6c9;
     display: inline;
     font-weight: bold;
-    margin-left: 70px;
+    margin-left: 80px;
 }
 
 #navabr li a:link{
@@ -70,17 +76,17 @@ body{
 
 #navbar li a:visited{
     text-decoration: none;
-    color: #F6E7CB;
+    color: #f3e6c9;
 }
 
 #navbar li a:hover{
     text-decoration: none;
-    color: #2f2d2a;
+    color: #79933b;
 }
 
 #navbar li a:active{
     text-decoration: none;
-    color: #2f2d2a;
+    color: #A7CA55;
 }
 
 .search{
@@ -95,8 +101,128 @@ body{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
+/*------Home Page------*/
+
+.home{
+    padding-bottom: 3%;
+}
+
+.home-search{
+    height: 400px;
+}
+
+.home-search img{
+    border-radius: 25px;
+    border-top-right-radius: 25px;
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: 100%;
+    opacity: 0.6;
+}
+
+.home-search input{
+    position: relative;
+    width: 600px;
+    height: 70px;
+    left: 30%;
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 10px;
+    font-size: 20px;
+    
+}
+
+.home-search h1{
+    font-family: "Times New Roman", Times, serif;
+    margin: 0%;
+    font-size: 60px;
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    left: 39%;
+}
+
+.home-text1{
+    padding: 3%;
+    padding-left: 10%;
+    position: relative;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.home-text1 h2{
+    color: black;
+    float: left;
+}
+
+.home-text1 p{
+    font-family: openSans-Regular;
+    float: left;
+    padding-right: 60%;
+}
+
+.home-text1 button{
+    position: absolute;
+    background-color: #79933b;
+    color: #f3e6c9;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    float: right;
+    width: 200px;
+    height: 75px;
+    margin-left: 50%;
+    margin-top: 6%;
+}
+
+.home-text2{
+    padding: 3%;
+    padding-top: 15%;
+    padding-left: 10%;
+    position: relative;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.home-text2 h2{
+    color: black;
+    float: left;
+}
+
+.home-text2 p{
+    font-family: openSans-Regular;
+    float: left;
+    padding-right: 60%;
+    padding-bottom: 5%;
+}
+
+.home-text2 button{
+    position: absolute;
+    background-color: #79933b;
+    color: #f3e6c9;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    float: right;
+    width: 200px;
+    height: 75px;
+    margin-left: 50%;
+    margin-top: 7%;
+}
+
+/*------FOOTER------*/
+.c h3{
+    color: #f3e6c9;
+    font-size: 12px;
+}
+/*------ETC------*/
+
 h3{
     text-align: center;
+}
+
+h2{
+    color: #F6E7CB;
 }
 
 .a{grid-area: a;}
@@ -114,7 +240,7 @@ h3{
     display:grid; 
     grid-auto-columns: 1fr;
     grid-auto-rows: minmax(1fr, auto); 
-    grid-gap: 3%;
+    grid-gap: 1%;
     grid-template-areas: 
     
     'a a a a'
