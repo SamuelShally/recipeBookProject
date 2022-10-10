@@ -36,10 +36,15 @@
                 </nav>
             </div>
 
+            <!-- Main content block -->
             <div class = "b"> 
+                
                 <div id = "recipes">
                      <h3>All Recipies</h3>
                 </div>
+
+
+
             </div>
 
             <!--jQuery library -->
@@ -62,6 +67,8 @@
                             for (let x = 0; x< actualData.length ; x++){
                                 let newBox = document.createElement('div');
                                 newBox.classList.add('box');
+                                
+                                newBox.dataset.name = actualData[x].Name;
 
                                 newBox.innerHTML = `
                                 <h3 style="color: brown"> ${actualData[x].Name}</h3> 
@@ -79,6 +86,7 @@
                         }
                     })
                  }) 
+
             </script>
                     
             <div class = "c"> 
