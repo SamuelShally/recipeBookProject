@@ -5,6 +5,16 @@
 		<link rel="icon" href="tile.png">
 		
 		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <style>
+            .box{
+                border: 2px solid rgb(118, 45, 45);
+                margin: 2%;
+                padding: 2%;
+                background-color: whitesmoke;
+                border-radius: 25px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            }
+         </style>
 	
 		<title>Home Page</title>
 	</head>
@@ -27,14 +37,52 @@
             </div>
 
             <div class = "b"> 
-                <div class = "recipes">
-                    <h3>Will be a proper recipes, some day :/</h3>
+                <div id = "recipes">
+                     <h3>All Recipies</h3>
                 </div>
             </div>
+
+            <!--jQuery library -->
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+            <!-- Adds the recipies to the page-->
+            <script>
+                //link to the parent element to display recipes
+                let recipeBox = document.getElementById("recipes");
+
+                 $(document).ready(function() {
+                    $.ajax({
+                        type: "GET",
+                        //source
+                        url: "getDatabase.php", 
+                        //will run if file is retrived 
+                        success: function(data, status){
+                            let actualData = JSON.parse(data);
+                            
+                            for (let x = 0; x< actualData.length ; x++){
+                                let newBox = document.createElement('div');
+                                newBox.classList.add('box');
+
+                                newBox.innerHTML = `
+                                <h3 style="color: brown"> ${actualData[x].Name}</h3> 
+                                <p><h4>Description:</h3> ${actualData[x].Description}</p> 
+                                <p><h4>Ingredients:</h3> ${actualData[x].Ingredients}</p> 
+                                <p> <h4>Instructions</h3> ${actualData[x].Instructions}</p>`;
+
+                                // newBox.classList.add(actualData[x].color);
+                                recipeBox.appendChild(newBox);
+                            }
+                        },
+                        //Will run if there's an error
+                        error: function(request, data, status){
+                            console.log("error");
+                        }
+                    })
+                 }) 
+            </script>
                     
             <div class = "c"> 
                 <h3>© 2022 - 2022 TheGroup - All Rights Reserved.</h3>
-                 
             </div>
         </div>
 	</body>	
