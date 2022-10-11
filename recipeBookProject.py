@@ -75,20 +75,45 @@ def add_recipe():
     #if not, then we have to find it
     def similar_substring(inputVal, lst):
 
+        # if there is not an exact match already in there
+        jaro_lst = []
         if (inputVal not in lst):
             for val in lst:
-                if jaro.jaro_winkler_metric(inputVal, val) > .80 and jaro.jaro_winkler_metric(inputVal, val) < .99:
+                curr_jaro  = jaro.jaro_winkler_metric(inputVal, val)
+                jaro_lst.append(curr_jaro);
+                
+                if curr_jaro > .80 and curr_jaro < .99:
                     answer = input("Did you mean " + val + "? (y/n): ")
                     while answer not in ['y', 'n']:
+                        print("Please enter either \'y\' or \'n\'")
                         answer = input("Did you mean " + val + "? (y/n): ")
                     if answer == 'y':
-                        return val
-                        break
-                else:
-                    
+                        return lst.index(val)
 
+
+            
+            #if we exhaust the entire list and cannot find anything even close
+            maxValInd = jaro_lst.index(max(jaro_lst))
+
+            print("The closest match to what you have inputted is :", lst[maxValInd])
+
+            secAnswer = input("Is that what you were looking for? (y/n): ")
+
+            while secAnswer not in ['y', 'n']:
+                print("Please enter either \'y\' or \'n\'")
+                secAnswer = input("Is that what you were looking for? (y/n): ")
+
+            if answer == 'y':
+                return maxValInd
+
+            else:
+                print("Could not find any matches through substring match :(")
+                return -1;
+
+                    
+        # if there is an exact match, you can just return that
         else:
-            return inputVal
+            return lst.index(inputVal)
 
     def view_all(recipe, recipe_name):
         print("Today we are cooking " + recipe[recipe_name]["name"])
