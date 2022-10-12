@@ -125,6 +125,7 @@
             var description = document.getElementById("description");
             var ingredients = document.getElementById("ingredients");
             var instructions = document.getElementById("instructions");
+            var submit = document.getElementById("button_send");
 
             function showHome(){
                 homePageUI.classList.remove("hidden");
@@ -221,19 +222,29 @@
                             console.log("error");
                         }
                     })
-
-                                    
+               
                 //save entered recipe
-                //     $.ajax({
-                //         url: 'test.php',
-                //         type: 'post',
-                //         data: {
-                //             // name: username.value
-                //         },
-                //         success: function(data, status) {
-                      
-                //         }
-                //      });
+                    submit.onclick = function(){
+                        $.ajax({
+                            url: 'save.php',
+                            type: 'post',
+                            data: {
+                                name: newName.value,
+                                description: description.value, 
+                                ingredients: ingredients.value, 
+                                instructions: instructions.value
+                            },
+                            success: function(data, status) {
+                                showRecipes();
+                                
+                                console.log(data);
+
+                            },
+                            error: function(request, data, status){
+                                console.log("error");
+                            }
+                        })
+                    }
                 }) 
         </script>
 	</body>	
