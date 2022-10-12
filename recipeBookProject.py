@@ -17,18 +17,19 @@ def add_recipe():
     recipe_name = input("What is the recipe called?: \n")
 
     recipes[recipe_name] = {
-                            "name" : recipe_name,
-                            "description": "",
-                            "ingredient_list": [],
-                            "instructions" : []
+                            "Name" : recipe_name,
+                            "Source" : "",
+                            "Description": "",
+                            "Ingredients": [],
+                            "Instructions" : []
                             }
 
-    recipes[recipe_name]["description"] = input("Give a description of the dish: \n")
+    recipes[recipe_name]["Description"] = input("Give a description of the dish: \n")
 
     anotherIngredient = "y"
 
     while(anotherIngredient == "y"):
-        recipes[recipe_name]["ingredient_list"].append(input("Enter an ingredient: \n"))
+        recipes[recipe_name]["Ingredients"].append(input("Enter an ingredient: \n"))
 
         anotherIngredient = input("Would you like to enter another ingredient (y/n): ")
 
@@ -42,7 +43,7 @@ def add_recipe():
     anotherInstruction = "y"
 
     while (anotherInstruction == "y"):
-        recipes[recipe_name]["instructions"].append(input("Enter an instruction: \n"))
+        recipes[recipe_name]["Instructions"].append(input("Enter an instruction: \n"))
 
         anotherInstruction = input("Would you like to enter another instruction (y/n): ")
         #
