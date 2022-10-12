@@ -11,8 +11,6 @@
   $obj->Ingredients = $ingredients;
   $obj->Instructions = $instructions;
 
-  // $newRecipe = json_encode($obj);
-
   //Get JSON file and add the new obj above
   $filename = "recipeDatabase.json";
   $data = json_decode(file_get_contents($filename), true);
@@ -23,6 +21,5 @@
   file_put_contents($filename, $encoded);
 
   //quit
-  print $success;
-  exit();
+  print "success";
  ?>

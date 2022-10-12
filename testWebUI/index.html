@@ -191,37 +191,39 @@
         <script>
             //link to the parent element to display recipes
             let recipeBox = document.getElementById("recipes");
+                
+                    $(document).ready(function() {
+                        function getRecipesFromDB(){
+                            $.ajax({
+                                type: "GET",
+                                //source
+                                url: "getDatabase.php", 
+                                //will run if file is retrived 
+                                success: function(data, status){
+                                    let actualData = JSON.parse(data);
+                                    
+                                    for (let x = 0; x< actualData.length ; x++){
+                                        let newBox = document.createElement('div');
+                                        newBox.classList.add('box');
+                                        
+                                        newBox.dataset.name = actualData[x].Name;
 
-                $(document).ready(function() {
-                    $.ajax({
-                        type: "GET",
-                        //source
-                        url: "getDatabase.php", 
-                        //will run if file is retrived 
-                        success: function(data, status){
-                            let actualData = JSON.parse(data);
-                            
-                            for (let x = 0; x< actualData.length ; x++){
-                                let newBox = document.createElement('div');
-                                newBox.classList.add('box');
-                                
-                                newBox.dataset.name = actualData[x].Name;
+                                        newBox.innerHTML = `
+                                        <h3 style="color: brown"> ${actualData[x].Name}</h3> 
+                                        <p><h4>Description:</h3> ${actualData[x].Description}</p> 
+                                        <p><h4>Ingredients:</h3> ${actualData[x].Ingredients}</p> 
+                                        <p> <h4>Instructions</h3> ${actualData[x].Instructions}</p>`;
 
-                                newBox.innerHTML = `
-                                <h3 style="color: brown"> ${actualData[x].Name}</h3> 
-                                <p><h4>Description:</h3> ${actualData[x].Description}</p> 
-                                <p><h4>Ingredients:</h3> ${actualData[x].Ingredients}</p> 
-                                <p> <h4>Instructions</h3> ${actualData[x].Instructions}</p>`;
-
-                                // newBox.classList.add(actualData[x].color);
-                                recipeBox.appendChild(newBox);
-                            }
-                        },
-                        //Will run if there's an error
-                        error: function(request, data, status){
-                            console.log("error");
-                        }
-                    })
+                                        // newBox.classList.add(actualData[x].color);
+                                        recipeBox.appendChild(newBox);
+                                    }
+                                },
+                                //Will run if there's an error
+                                error: function(request, data, status){
+                                    console.log("error");
+                                }
+                            })
+                         }
                
                 //save entered recipe
                     submit.onclick = function(){
@@ -235,16 +237,20 @@
                                 instructions: instructions.value
                             },
                             success: function(data, status) {
+                                //Clear old recepes and refresh them with the newly added one
+                                recipeBox.innerHTML ="";
+                                getRecipesFromDB();
                                 showRecipes();
-                                
                                 console.log(data);
-
                             },
                             error: function(request, data, status){
                                 console.log("error");
                             }
                         })
                     }
+
+                    //initial retrival of recipes 
+                    getRecipesFromDB();
                 }) 
         </script>
 	</body>	
