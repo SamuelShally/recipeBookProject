@@ -16,7 +16,6 @@
                 border-radius: 25px;
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
             }
-
     
             .hidden {
                  display: none;
@@ -26,15 +25,13 @@
 	<body>
         <div class="wrapper">   
             <div class = "a">
-                <h1> The Group </h1>
+                <h1> The Group</h1>
                 <nav id = "navbar">
                     <div class = "navitems">
                         <ul>
-                            <li><div class="nav-item" id="showHome">showHome</div></li>
-                            <li><div class="nav-item" id="showRecipes">showRecipes</div></li>
-                            <li> <div class="nav-item" id="showAboutUs">aboutUs</div></li>
-                            
-                            
+                            <li><div class="nav-item" id="showHome">Home</div></li>
+                            <li><div class="nav-item" id="showRecipes">Recipes</div></li>
+                            <li> <div class="nav-item" id="showAboutUs">About Us</div></li>
                             <div class="search">
                                 <input type="text" placeholder="Search..">
                             </div>
@@ -49,7 +46,7 @@
                     <!-- The info that was on the home page -->
                     <div class = "home" id="home">
                         <div class = "home-search">
-                            <img src = "Images/fruit.jpeg" alt = "Dinner Table">
+                            <img src = "Images/fruit.jpeg" alt = "Fruit">
                             <h1>Find a Recipe</h1>
                             <input type="text" placeholder="  Let's Find Some Recipes...">
                         </div>
@@ -57,13 +54,13 @@
                         <div class = "home-text1">
                             <h2>Recipe Database</h2>
                             <p>Don't know exactly what you're looking for? Checkout our database that has all the recipes we offer! Here you can find thousands of recipes that fit any of your needs. Once you find your desired recipe, simply click on it and gather all the information you need to recreate it!</p>
-                            <button type="button">Recipe Database</button>
+                            <a href = "/recipes.html">Recipes Database</a>
                         </div>
 
                         <div class = "home-text2">
                             <h2>Make Your Own</h2>
                             <p>Do you have a recipe that you think people will love? You can add your own recipe to our database and others can recreate your very own recipe themselves. Once you click on "Make a Recipe," you will be taken to a page where you can add all the details for your recipe. Once you're done, just click submit and your recipe will be present in our database. It's that easy!</p>
-                            <button type="button">Make Your Own</button>
+                            <a href = "/addrecipes.html">Make Your Own</a>
                         </div>
                     </div>
 
@@ -73,8 +70,25 @@
                    </div>
 
                    <!-- The info that was on the about us page -->
-                   <div id = "aboutUs"> 
-                        <h3>Will be a proper about us, some day :/</h3>
+                   <div class = "aboutUs" id = "aboutUs"> 
+                        <div class = "ourProject">
+                            <img src = "Images/girlcooking.jpeg" alt = "Girl Cooking">
+                            <h1>About Us</h1>
+                            <p>This project focuses on creating an easy-to-use database for any cooking needs. We understand the choice paralysis that comes with doing a Google search for any recipes and that's why we made a simple option for finding delicious recipes with detailed instructions. With "The Groups" recipe database, you can search for any recipes available using our search engine or just scrolling through our database yourself. We also provide the option to add your very own creations to share with all of our users. Our recipe database is your one-stop-shop for all of your cooking plans.</p>
+                        </div>
+
+                        <div class = "ourTeam">
+                            <h3>Our Team</h3>
+                            <img src = "Images/shreyCharacter.png" alt = "Shrey">
+                            <h2>Shrey Mittal</h2>
+                            <p>Shrey Mittal is a software engineer with plenty of experience in backend design. Mittal's Python script, coupled with his JSON database, allowed us to be able to display and add recipes. Additionally, Mittal created our search engine to incorporate substrings and fuzzy search.</p>
+                            <img src = "Images/samoCharacter.png" alt = "Samo">
+                            <h2>Samo Shally</h2>
+                            <p>Samo Shally is a software engineer who has worked on both frontend and backend development. Shally worked on creating an efficient frontend using dividers and integrated our frontend and backend development using PHP and Ajax to display recipes from our database.</p>
+                            <img src = "Images/soniaCharacter.png" alt = "Sonia">
+                            <h2>Sonia Jain</h2>
+                            <p>Sonia Jain is a software engineer who primarily works in frontend. Jain coded and designed the frontend that you see now. Using HTML and CSS, Jain designed the graphical user interface with functionality and ease in mind. Additionally, she wrote the instructions page, about us page, and developed the HTML form for adding recipes.</p>
+                        </div>
                    </div>
                 
             </div>
