@@ -16,25 +16,37 @@
                 border-radius: 25px;
                 box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
             }
-
     
             .hidden {
                  display: none;
             }
+
+            #addrecipe{
+                /* border: 1px solid black;  */
+                margin: auto; 
+                padding: 5%;
+            }
+
+            .Input{
+               /* text-align: center; */
+               margin: auto; 
+            }
+
          </style>
 	</head>
 	<body>
         <div class="wrapper">   
             <div class = "a">
-                <h1> The Group </h1>
+                <h1> The Group</h1>
                 <nav id = "navbar">
                     <div class = "navitems">
                         <ul>
-                            <li><div class="nav-item" id="showHome">showHome</div></li>
-                            <li><div class="nav-item" id="showRecipes">showRecipes</div></li>
-                            <li> <div class="nav-item" id="showAboutUs">aboutUs</div></li>
-                            
-                            
+                            <li><div class="nav-item" id="showHome">Home</div></li>
+                            <li><div class="nav-item" id="showRecipes">Recipes</div></li>
+                            <li> <div class="nav-item" id="addRecipeForm">Add Recipe</div></li>
+                            <li> <div class="nav-item" id="showAboutUs">About Us</div></li>
+                            <li> <div class="nav-item" id="showFAQ">FAQ</div></li>
+
                             <div class="search">
                                 <input type="text" placeholder="Search..">
                             </div>
@@ -49,7 +61,7 @@
                     <!-- The info that was on the home page -->
                     <div class = "home" id="home">
                         <div class = "home-search">
-                            <img src = "Images/fruit.jpeg" alt = "Dinner Table">
+                            <img src = "Images/fruit.jpeg" alt = "Fruit">
                             <h1>Find a Recipe</h1>
                             <input type="text" placeholder="  Let's Find Some Recipes...">
                         </div>
@@ -57,13 +69,13 @@
                         <div class = "home-text1">
                             <h2>Recipe Database</h2>
                             <p>Don't know exactly what you're looking for? Checkout our database that has all the recipes we offer! Here you can find thousands of recipes that fit any of your needs. Once you find your desired recipe, simply click on it and gather all the information you need to recreate it!</p>
-                            <button type="button">Recipe Database</button>
+                            <a id = "recipes2">Recipes Database</a>
                         </div>
 
                         <div class = "home-text2">
                             <h2>Make Your Own</h2>
                             <p>Do you have a recipe that you think people will love? You can add your own recipe to our database and others can recreate your very own recipe themselves. Once you click on "Make a Recipe," you will be taken to a page where you can add all the details for your recipe. Once you're done, just click submit and your recipe will be present in our database. It's that easy!</p>
-                            <button type="button">Make Your Own</button>
+                            <a id = "recipes2">Make Your Own</a>
                         </div>
                     </div>
 
@@ -72,54 +84,52 @@
                         <h3>All Recipies</h3>
                    </div>
 
-                   <!-- The info that was on the about us page -->
-                   <div id = "aboutUs"> 
-                        <h3>Will be a proper about us, some day :/</h3>
+                   <div id ="addrecipe">
+
+                       <div class = "Input"> Name:<br><input type="text" id="name"></div>
+                       <div class = "Input"> Description:<br><input type="text" id="description"></div>
+                       <div class = "Input"> Ingredients:<br><textarea  id="ingredients"></textarea></div>
+                       <div class = "Input"> Instructions:<br><textarea  id="instructions"></textarea></div>
+                       <button class = "Input" id="button_send">Add!</button>
+
                    </div>
-                
+
+                   <!-- The info that was on the about us page -->
+                   <div class = "aboutUs" id = "aboutUs"> 
+                        <div class = "ourProject">
+                            <img src = "Images/girlcooking.jpeg" alt = "Girl Cooking">
+                            <h1>About Us</h1>
+                            <p>This project focuses on creating an easy-to-use database for any cooking needs. We understand the choice paralysis that comes with doing a Google search for any recipes and that's why we made a simple option for finding delicious recipes with detailed instructions. With "The Groups" recipe database, you can search for any recipes available using our search engine or just scrolling through our database yourself. We also provide the option to add your very own creations to share with all of our users. Our recipe database is your one-stop-shop for all of your cooking plans.</p>
+                        </div>
+
+                        <div class = "ourTeam">
+                            <h3>Our Team</h3>
+                            <img src = "Images/shreyCharacter.png" alt = "Shrey">
+                            <h4>Shrey Mittal</h4>
+                            <p>Shrey Mittal is a software engineer with plenty of experience in backend design. Mittal's Python script, coupled with his JSON database, allowed us to be able to display and add recipes. Additionally, Mittal created our search engine to incorporate substrings and fuzzy search.</p>
+                            <img src = "Images/samoCharacter.png" alt = "Samo">
+                            <h4>Samo Shally</h4>
+                            <p>Samo Shally is a software engineer who has worked on both frontend and backend development. Shally worked on creating an efficient frontend using dividers and integrated our frontend and backend development using PHP and Ajax to display recipes from our database.</p>
+                            <img src = "Images/soniaCharacter.png" alt = "Sonia">
+                            <h4>Sonia Jain</h4>
+                            <p>Sonia Jain is a software engineer who primarily works in frontend. Jain coded and designed the frontend that you see now. Using HTML and CSS, Jain designed the graphical user interface with functionality and ease in mind. Additionally, she wrote the instructions page and about us page.</p>
+                        </div>
+                   </div>
+
+                   <div class = "faq" id = "faq">
+                        <h1>Frequently Asked Questions</h1>
+                        <h3>How Do I Create a Recipe?</h3>
+                        <p>Creating a recipe is as easy a pie! To create, simple click on an "Make Your Own" link located on the navigation bar, on our home page, or on our recipes page. Afterwards, you will be directed to a form that prompts you with instructions. Enter any information in the proper box that is associated with each prompt. Once you have entered all your information, simply click on the "Create Recipe" button at the bottom of the page, and your recipe will be added to our database and shared with all of our users.</p>
+                        <h3>How Do I Access a Recipe?</h3>
+                        <p>There are two ways to access a recipe: <br> 1. If you click on the link in our navigation bar, titled "Recipes", or the link found on our home page, titled "Recipes Database", you will be directed to our database that contains our recipes. Here, you can scroll through all of our available recipes to find the one that's perfect for you. Once you find a recipe you enjoy, simply click on the recipe to be directed to the recipe's page where you can find all of the information you need to create it yourself. <br> 2. You can also search for any recipe you'd like by using our search bar located in the navigation bar or the search bar located on our home page. More information on this can be found below under "How Do I Search for a Recipe."</p>
+                        <h3>How Do I Search for a Recipe?</h3>
+                        <p>Searching for a recipe is easy! We have two functional search bars, one on the home page and one that is always available in the navigation bar. Simply type in the name of the recipe and hit enter, and you will be directed with the links of any recipes that match your search. With our search functionality, there is no need to worry about case or knowing the exact name of your recipe. Simply typing a word that is in the recipe name will bring up the link for your recipe.</p>
+                        <h3>How Do I Find Out More About the Creators?</h3>
+                        <p>That's sweet of you to ask!! If you're interested in finding out more about us, you can click on the "About Us" tab located in the navigation bar. Here you'll find information about the overall project, each of our team members, and their contributions.</p>
+
+                   </div>
             </div>
-
-            <!--jQuery library, allows me to use the ajax query below-->
-            <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
-            <!-- Retrives and adds the recipies to the page-->
-            <script>
-                //link to the parent element to display recipes
-                let recipeBox = document.getElementById("recipes");
-
-                    $(document).ready(function() {
-                    $.ajax({
-                        type: "GET",
-                        //source
-                        url: "getDatabase.php", 
-                        //will run if file is retrived 
-                        success: function(data, status){
-                            let actualData = JSON.parse(data);
-                            
-                            for (let x = 0; x< actualData.length ; x++){
-                                let newBox = document.createElement('div');
-                                newBox.classList.add('box');
-                                
-                                newBox.dataset.name = actualData[x].Name;
-
-                                newBox.innerHTML = `
-                                <h3 style="color: brown"> ${actualData[x].Name}</h3> 
-                                <p><h4>Description:</h3> ${actualData[x].Description}</p> 
-                                <p><h4>Ingredients:</h3> ${actualData[x].Ingredients}</p> 
-                                <p> <h4>Instructions</h3> ${actualData[x].Instructions}</p>`;
-
-                                // newBox.classList.add(actualData[x].color);
-                                recipeBox.appendChild(newBox);
-                            }
-                        },
-                        //Will run if there's an error
-                        error: function(request, data, status){
-                            console.log("error");
-                        }
-                    })
-                    }) 
-            </script>
-                    
+        
             <div class = "c"> 
                 <h3>© 2022 - 2022 TheGroup - All Rights Reserved.</h3>    
             </div>
@@ -131,28 +141,63 @@
             let home = document.getElementById("showHome");
             let recipes = document.getElementById("showRecipes");
             let aboutUs= document.getElementById("showAboutUs");
+            let addRecipe2 = document.getElementById("addRecipeForm");
+            let faq = document.getElementById("showFAQ");
 
             //Actual UI elements to show and hide
             var homePageUI = document.getElementById("home");
             let recipesUI = document.getElementById("recipes");
             let aboutUsUI = document.getElementById("aboutUs");
+            let add = document.getElementById("addrecipe");
+            let faqUI = document.getElementById("faq");
+
+            //Save recipie values
+            var newName = document.getElementById("name");
+            var description = document.getElementById("description");
+            var ingredients = document.getElementById("ingredients");
+            var instructions = document.getElementById("instructions");
+            var submit = document.getElementById("button_send");
 
             function showHome(){
                 homePageUI.classList.remove("hidden");
                 recipesUI.classList.add("hidden");
                 aboutUsUI.classList.add("hidden");
+                add.classList.add("hidden");
+                faqUI.classList.add("hidden");
             }
 
             function showRecipes(){
                 homePageUI.classList.add("hidden");
                 recipesUI.classList.remove("hidden");
                 aboutUsUI.classList.add("hidden");
+                add.classList.add("hidden");
+                faqUI.classList.add("hidden");
             }
 
             function showAboutUs(){
                 homePageUI.classList.add("hidden");
                 recipesUI.classList.add("hidden");
                 aboutUsUI.classList.remove("hidden");
+                add.classList.add("hidden");
+                faqUI.classList.add("hidden");
+            }
+
+            function showAddRecipe(){
+                homePageUI.classList.add("hidden");
+                recipesUI.classList.add("hidden");
+                aboutUsUI.classList.add("hidden");
+                add.classList.remove("hidden"); 
+                faqUI.classList.add("hidden"); 
+
+                // console.log("got here");
+            }
+
+            function showFAQ(){
+                homePageUI.classList.add("hidden");
+                recipesUI.classList.add("hidden");
+                aboutUsUI.classList.add("hidden");
+                add.classList.add("hidden");
+                faqUI.classList.remove("hidden");
             }
 
             home.onclick = function(event){
@@ -165,9 +210,96 @@
             
             aboutUs.onclick = function(event){
                 showAboutUs();
+                
+            }
+
+        
+            addRecipe2.onclick = function(event){
+                showAddRecipe()
+                
+
+                newName.value = "";
+                ingredients.value = "";
+                instructions.value = "";
+                description.value = "";
+            }
+
+            faq.onclick = function(event){
+                showFAQ();
+                
             }
 
             showHome();
+        </script>
+
+        <!--jQuery library, allows me to use the ajax query below-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+        <!-- Retrives and adds the recipies to the page-->
+        <script>
+            //link to the parent element to display recipes
+            let recipeBox = document.getElementById("recipes");
+                
+                    $(document).ready(function() {
+                        function getRecipesFromDB(){
+                            $.ajax({
+                                type: "GET",
+                                //source
+                                url: "getDatabase.php", 
+                                //will run if file is retrived 
+                                success: function(data, status){
+                                    let actualData = JSON.parse(data);
+                                    
+                                    for (let x = 0; x< actualData.length ; x++){
+                                        let newBox = document.createElement('div');
+                                        newBox.classList.add('box');
+                                        
+                                        newBox.dataset.name = actualData[x].Name;
+
+                                        newBox.innerHTML = `
+                                        <h3 style="color: brown"> ${actualData[x].Name}</h3> 
+                                        <p><h4>Description:</h3> ${actualData[x].Description}</p> 
+                                        <p><h4>Ingredients:</h3> ${actualData[x].Ingredients}</p> 
+                                        <p> <h4>Instructions</h3> ${actualData[x].Instructions}</p>`;
+
+                                        // newBox.classList.add(actualData[x].color);
+                                        recipeBox.appendChild(newBox);
+                                    }
+                                },
+                                //Will run if there's an error
+                                error: function(request, data, status){
+                                    console.log("error");
+                                }
+                            })
+                         }
+               
+                //save entered recipe
+                    submit.onclick = function(){
+                        $.ajax({
+                            url: 'save.php',
+                            type: 'post',
+                            data: {
+                                name: newName.value,
+                                description: description.value, 
+                                ingredients: ingredients.value, 
+                                instructions: instructions.value
+                            },
+                            success: function(data, status) {
+                                //Clear old recepes and refresh them with the newly added one
+                                recipeBox.innerHTML ="";
+                                getRecipesFromDB();
+                                showRecipes();
+                                console.log(data);
+                            },
+                            error: function(request, data, status){
+                                console.log("error");
+                            }
+                        })
+                    }
+
+                    //initial retrival of recipes 
+                    getRecipesFromDB();
+                }) 
         </script>
 	</body>	
 </html>

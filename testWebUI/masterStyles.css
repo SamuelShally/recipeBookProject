@@ -55,8 +55,6 @@ body{
     padding-top: 2%;
 }
 
-#navbar ul li a{text-decoration:none}
-
 #navbar ul{
     padding-right: 240px;
     list-style: none;
@@ -65,28 +63,13 @@ body{
 
 #navbar li{
     color: #f3e6c9;
-    display: inline;
+    display: inline-block;
     font-weight: bold;
     margin-left: 80px;
 }
 
-#navabr li a:link{
-    text-decoration: none;
-}
-
-#navbar li a:visited{
-    text-decoration: none;
-    color: #f3e6c9;
-}
-
-#navbar li a:hover{
-    text-decoration: none;
+.nav-item:hover{
     color: #79933b;
-}
-
-#navbar li a:active{
-    text-decoration: none;
-    color: #A7CA55;
 }
 
 .search{
@@ -160,20 +143,26 @@ body{
     font-family: openSans-Regular;
     float: left;
     padding-right: 60%;
+    color: rgb(97, 97, 97);
 }
 
-.home-text1 button{
+.home-text1 a{
     position: absolute;
+    font-family: openSans-Regular;
     background-color: #79933b;
     color: #f3e6c9;
-    border: none;
-    border-radius: 5px;
     font-size: 20px;
-    float: right;
-    width: 200px;
-    height: 75px;
+    padding: 20px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     margin-left: 50%;
     margin-top: 6%;
+    border-radius: 5px;
+}
+
+.home-text1 a:hover{
+    background-color: #3f4e1e;
 }
 
 .home-text2{
@@ -194,21 +183,117 @@ body{
     float: left;
     padding-right: 60%;
     padding-bottom: 5%;
+    color: rgb(97, 97, 97);
 }
 
-.home-text2 button{
+.home-text2 a{
     position: absolute;
+    font-family: openSans-Regular;
     background-color: #79933b;
     color: #f3e6c9;
-    border: none;
-    border-radius: 5px;
     font-size: 20px;
-    float: right;
-    width: 200px;
-    height: 75px;
+    padding: 20px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     margin-left: 50%;
-    margin-top: 7%;
+    margin-top: 6%;
+    border-radius: 5px;
 }
+
+.home-text2 a:hover{
+    background-color: #3f4e1e;
+}
+
+/*------ABOUT US------*/
+.aboutUs p{
+    margin-left: 51%;;
+    margin-right: 15%;
+}
+
+.ourProject{
+    float: left;
+    padding: 3%;
+    background-color: #CFE3EC;
+}
+
+.ourProject h1{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 50px;
+    margin-left: 51%;
+}
+
+.ourProject img{
+    position: absolute;
+    float: right;
+    margin: 0%;
+    margin-left: 18%;
+    width: 350px;
+}
+
+.ourProject p{
+    float: left;
+    line-height: 2.3;
+    color: rgb(97, 97, 97);
+}
+
+.ourTeam img{
+    position: absolute;
+    margin-top: 2%;
+    width: 230px;
+    margin-left: 20%;
+}
+
+.ourTeam{
+    float: right;
+    padding: 3%;
+}
+
+.ourTeam p{
+    line-height: 2.3;
+    margin-top: 0%;
+    margin-bottom: 5%;
+    color: rgb(97, 97, 97);
+}
+
+.ourTeam h3{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 45px;
+}
+
+.ourTeam h4{
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    color: black;
+    margin-left: 12%;
+    font-size: 24px;
+}
+
+/*-------FAQ-------*/
+.faq{
+    padding: 3%;
+}
+
+.faq h1{
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.faq h3{
+    padding-left: 3%;
+    font-family: "Times New Roman", Times, serif;
+    text-align: left;
+}
+
+.faq p{
+    line-height: 2;
+    color: rgb(97, 97, 97);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
 
 /*------FOOTER------*/
 .c h3{

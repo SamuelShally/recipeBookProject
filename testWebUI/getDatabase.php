@@ -4,4 +4,5 @@
     $data = file_get_contents($filename);
 
     print($data);
+    exit(); 
 ?>
