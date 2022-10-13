@@ -43,9 +43,9 @@
                         <ul>
                             <li><div class="nav-item" id="showHome">Home</div></li>
                             <li><div class="nav-item" id="showRecipes">Recipes</div></li>
-                            <li> <div class="nav-item" id="showAboutUs">About Us</div></li>
                             <li> <div class="nav-item" id="addRecipeForm">Add Recipe</div></li>
-                            <li> <div class="nav-item" id="faq">FAQ</div></li>
+                            <li> <div class="nav-item" id="showAboutUs">About Us</div></li>
+                            <li> <div class="nav-item" id="showFAQ">FAQ</div></li>
 
                             <div class="search">
                                 <input type="text" placeholder="Search..">
@@ -69,13 +69,13 @@
                         <div class = "home-text1">
                             <h2>Recipe Database</h2>
                             <p>Don't know exactly what you're looking for? Checkout our database that has all the recipes we offer! Here you can find thousands of recipes that fit any of your needs. Once you find your desired recipe, simply click on it and gather all the information you need to recreate it!</p>
-                            <a href = "/recipes.html">Recipes Database</a>
+                            <a id = "recipes2">Recipes Database</a>
                         </div>
 
                         <div class = "home-text2">
                             <h2>Make Your Own</h2>
                             <p>Do you have a recipe that you think people will love? You can add your own recipe to our database and others can recreate your very own recipe themselves. Once you click on "Make a Recipe," you will be taken to a page where you can add all the details for your recipe. Once you're done, just click submit and your recipe will be present in our database. It's that easy!</p>
-                            <a href = "/addrecipes.html">Make Your Own</a>
+                            <a id = "recipes2">Make Your Own</a>
                         </div>
                     </div>
 
@@ -105,15 +105,28 @@
                         <div class = "ourTeam">
                             <h3>Our Team</h3>
                             <img src = "Images/shreyCharacter.png" alt = "Shrey">
-                            <h2>Shrey Mittal</h2>
+                            <h4>Shrey Mittal</h4>
                             <p>Shrey Mittal is a software engineer with plenty of experience in backend design. Mittal's Python script, coupled with his JSON database, allowed us to be able to display and add recipes. Additionally, Mittal created our search engine to incorporate substrings and fuzzy search.</p>
                             <img src = "Images/samoCharacter.png" alt = "Samo">
-                            <h2>Samo Shally</h2>
+                            <h4>Samo Shally</h4>
                             <p>Samo Shally is a software engineer who has worked on both frontend and backend development. Shally worked on creating an efficient frontend using dividers and integrated our frontend and backend development using PHP and Ajax to display recipes from our database.</p>
                             <img src = "Images/soniaCharacter.png" alt = "Sonia">
-                            <h2>Sonia Jain</h2>
+                            <h4>Sonia Jain</h4>
                             <p>Sonia Jain is a software engineer who primarily works in frontend. Jain coded and designed the frontend that you see now. Using HTML and CSS, Jain designed the graphical user interface with functionality and ease in mind. Additionally, she wrote the instructions page and about us page.</p>
                         </div>
+                   </div>
+
+                   <div class = "faq" id = "faq">
+                        <h1>Frequently Asked Questions</h1>
+                        <h3>How Do I Create a Recipe?</h3>
+                        <p>Creating a recipe is as easy a pie! To create, simple click on an "Make Your Own" link located on the navigation bar, on our home page, or on our recipes page. Afterwards, you will be directed to a form that prompts you with instructions. Enter any information in the proper box that is associated with each prompt. Once you have entered all your information, simply click on the "Create Recipe" button at the bottom of the page, and your recipe will be added to our database and shared with all of our users.</p>
+                        <h3>How Do I Access a Recipe?</h3>
+                        <p>There are two ways to access a recipe: <br> 1. If you click on the link in our navigation bar, titled "Recipes", or the link found on our home page, titled "Recipes Database", you will be directed to our database that contains our recipes. Here, you can scroll through all of our available recipes to find the one that's perfect for you. Once you find a recipe you enjoy, simply click on the recipe to be directed to the recipe's page where you can find all of the information you need to create it yourself. <br> 2. You can also search for any recipe you'd like by using our search bar located in the navigation bar or the search bar located on our home page. More information on this can be found below under "How Do I Search for a Recipe."</p>
+                        <h3>How Do I Search for a Recipe?</h3>
+                        <p>Searching for a recipe is easy! We have two functional search bars, one on the home page and one that is always available in the navigation bar. Simply type in the name of the recipe and hit enter, and you will be directed with the links of any recipes that match your search. With our search functionality, there is no need to worry about case or knowing the exact name of your recipe. Simply typing a word that is in the recipe name will bring up the link for your recipe.</p>
+                        <h3>How Do I Find Out More About the Creators?</h3>
+                        <p>That's sweet of you to ask!! If you're interested in finding out more about us, you can click on the "About Us" tab located in the navigation bar. Here you'll find information about the overall project, each of our team members, and their contributions.</p>
+
                    </div>
             </div>
         
@@ -129,13 +142,14 @@
             let recipes = document.getElementById("showRecipes");
             let aboutUs= document.getElementById("showAboutUs");
             let addRecipe2 = document.getElementById("addRecipeForm");
-            
+            let faq = document.getElementById("showFAQ");
 
             //Actual UI elements to show and hide
             var homePageUI = document.getElementById("home");
             let recipesUI = document.getElementById("recipes");
             let aboutUsUI = document.getElementById("aboutUs");
             let add = document.getElementById("addrecipe");
+            let faqUI = document.getElementById("faq");
 
             //Save recipie values
             var newName = document.getElementById("name");
@@ -149,6 +163,7 @@
                 recipesUI.classList.add("hidden");
                 aboutUsUI.classList.add("hidden");
                 add.classList.add("hidden");
+                faqUI.classList.add("hidden");
             }
 
             function showRecipes(){
@@ -156,6 +171,7 @@
                 recipesUI.classList.remove("hidden");
                 aboutUsUI.classList.add("hidden");
                 add.classList.add("hidden");
+                faqUI.classList.add("hidden");
             }
 
             function showAboutUs(){
@@ -163,15 +179,25 @@
                 recipesUI.classList.add("hidden");
                 aboutUsUI.classList.remove("hidden");
                 add.classList.add("hidden");
+                faqUI.classList.add("hidden");
             }
 
             function showAddRecipe(){
                 homePageUI.classList.add("hidden");
                 recipesUI.classList.add("hidden");
                 aboutUsUI.classList.add("hidden");
-                add.classList.remove("hidden");  
+                add.classList.remove("hidden"); 
+                faqUI.classList.add("hidden"); 
 
                 // console.log("got here");
+            }
+
+            function showFAQ(){
+                homePageUI.classList.add("hidden");
+                recipesUI.classList.add("hidden");
+                aboutUsUI.classList.add("hidden");
+                add.classList.add("hidden");
+                faqUI.classList.remove("hidden");
             }
 
             home.onclick = function(event){
@@ -196,6 +222,11 @@
                 ingredients.value = "";
                 instructions.value = "";
                 description.value = "";
+            }
+
+            faq.onclick = function(event){
+                showFAQ();
+                
             }
 
             showHome();
