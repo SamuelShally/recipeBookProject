@@ -1,5 +1,10 @@
 #creating the preliminary backend solution for the project
 import pprint
+import json
+from os import path
+
+filename = "data_storage.json"
+objects = []
 
 def add_recipe():
     # we will be using dictionaries as the storage method of choice
@@ -53,6 +58,26 @@ def add_recipe():
 
     
     pprint.pprint(recipes)
+    
+    if path.isfile(filename) is False:
+        raise Exception("That is not the correct file name!")
+    
+    with open(filename) as fp:
+        objects = json.load(fp)
+        
+    print(objects)
+    
+    print(type(objects))
+    
+    objects.append(recipes)
+    
+    print(objects)
+    
+    
+    with open(filename, "w") as outfile:
+        json.dump(objects, outfile, indent=4, separators=(',',': '))
+
+    print('Successfully appended to the JSON file')
 
     #given a string and list, returns the index of the string. If not, returns -1
     def exact_string_comparison(inputVal, lst):
@@ -139,6 +164,8 @@ def add_recipe():
         for val in recipe[recipe_name]["instructions"]:
             print(val)
             input("Press enter to continue...")
+            
+    
 
 
 
