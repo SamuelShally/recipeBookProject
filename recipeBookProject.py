@@ -1,5 +1,10 @@
 #creating the preliminary backend solution for the project
 import pprint
+import json
+from os import path
+
+filename = "data_storage.json"
+objects = []
 
 def add_recipe():
     # we will be using dictionaries as the storage method of choice
@@ -17,18 +22,19 @@ def add_recipe():
     recipe_name = input("What is the recipe called?: \n")
 
     recipes[recipe_name] = {
-                            "name" : recipe_name,
-                            "description": "",
-                            "ingredient_list": [],
-                            "instructions" : []
+                            "Name" : recipe_name,
+                            "Source" : "",
+                            "Description": "",
+                            "Ingredients": [],
+                            "Instructions" : []
                             }
 
-    recipes[recipe_name]["description"] = input("Give a description of the dish: \n")
+    recipes[recipe_name]["Description"] = input("Give a description of the dish: \n")
 
     anotherIngredient = "y"
 
     while(anotherIngredient == "y"):
-        recipes[recipe_name]["ingredient_list"].append(input("Enter an ingredient: \n"))
+        recipes[recipe_name]["Ingredients"].append(input("Enter an ingredient: \n"))
 
         anotherIngredient = input("Would you like to enter another ingredient (y/n): ")
 
@@ -42,7 +48,7 @@ def add_recipe():
     anotherInstruction = "y"
 
     while (anotherInstruction == "y"):
-        recipes[recipe_name]["instructions"].append(input("Enter an instruction: \n"))
+        recipes[recipe_name]["Instructions"].append(input("Enter an instruction: \n"))
 
         anotherInstruction = input("Would you like to enter another instruction (y/n): ")
         #
@@ -52,6 +58,26 @@ def add_recipe():
 
     
     pprint.pprint(recipes)
+    
+    if path.isfile(filename) is False:
+        raise Exception("That is not the correct file name!")
+    
+    with open(filename) as fp:
+        objects = json.load(fp)
+        
+    print(objects)
+    
+    print(type(objects))
+    
+    objects.append(recipes)
+    
+    print(objects)
+    
+    
+    with open(filename, "w") as outfile:
+        json.dump(objects, outfile, indent=4, separators=(',',': '))
+
+    print('Successfully appended to the JSON file')
 
     #given a string and list, returns the index of the string. If not, returns -1
     def exact_string_comparison(inputVal, lst):
@@ -138,6 +164,8 @@ def add_recipe():
         for val in recipe[recipe_name]["instructions"]:
             print(val)
             input("Press enter to continue...")
+            
+    
 
 
 
