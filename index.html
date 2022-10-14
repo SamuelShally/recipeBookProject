@@ -48,7 +48,8 @@
                             <li> <div class="nav-item" id="showFAQ">FAQ</div></li>
 
                             <div class="search">
-                                <input type="text" placeholder="Search..">
+                                <input id="searchOne" type="text" placeholder="Search..">
+                                <button id="searchButtonOne">GO</button>
                             </div>
                              
                         </ul>
@@ -128,6 +129,10 @@
                         <p>That's sweet of you to ask!! If you're interested in finding out more about us, you can click on the "About Us" tab located in the navigation bar. Here you'll find information about the overall project, each of our team members, and their contributions.</p>
 
                    </div>
+
+                   <div id="searchResults">
+                        
+                   </div>
             </div>
         
             <div class = "c"> 
@@ -150,6 +155,7 @@
             let aboutUsUI = document.getElementById("aboutUs");
             let add = document.getElementById("addrecipe");
             let faqUI = document.getElementById("faq");
+            let searchResults = document.getElementById("searchResults");
 
             //Save recipie values
             var newName = document.getElementById("name");
@@ -158,12 +164,22 @@
             var instructions = document.getElementById("instructions");
             var submit = document.getElementById("button_send");
 
+            function showSearch(){
+                homePageUI.classList.add("hidden");
+                recipesUI.classList.add("hidden");
+                aboutUsUI.classList.add("hidden");
+                add.classList.add("hidden");
+                faqUI.classList.add("hidden");
+                searchResults.classList.remove("hidden");
+            }
+
             function showHome(){
                 homePageUI.classList.remove("hidden");
                 recipesUI.classList.add("hidden");
                 aboutUsUI.classList.add("hidden");
                 add.classList.add("hidden");
                 faqUI.classList.add("hidden");
+                searchResults.classList.add("hidden");
             }
 
             function showRecipes(){
@@ -172,6 +188,7 @@
                 aboutUsUI.classList.add("hidden");
                 add.classList.add("hidden");
                 faqUI.classList.add("hidden");
+                searchResults.classList.add("hidden");
             }
 
             function showAboutUs(){
@@ -180,6 +197,7 @@
                 aboutUsUI.classList.remove("hidden");
                 add.classList.add("hidden");
                 faqUI.classList.add("hidden");
+                searchResults.classList.add("hidden");
             }
 
             function showAddRecipe(){
@@ -188,8 +206,7 @@
                 aboutUsUI.classList.add("hidden");
                 add.classList.remove("hidden"); 
                 faqUI.classList.add("hidden"); 
-
-                // console.log("got here");
+                searchResults.classList.add("hidden");
             }
 
             function showFAQ(){
@@ -198,6 +215,7 @@
                 aboutUsUI.classList.add("hidden");
                 add.classList.add("hidden");
                 faqUI.classList.remove("hidden");
+                searchResults.classList.add("hidden");
             }
 
             home.onclick = function(event){
@@ -248,6 +266,7 @@
                                 url: "getDatabase.php", 
                                 //will run if file is retrived 
                                 success: function(data, status){
+                                    recipeBox.innerHTML = "";
                                     let actualData = JSON.parse(data);
                                     
                                     for (let x = 0; x< actualData.length ; x++){
@@ -284,8 +303,6 @@
                                                 newBox.dataset.showing = "all";
                                             }
                                         }
-
-                                        newBox.classList.add(actualData[x].color);
                                         recipeBox.appendChild(newBox);
                                     }
                                 },
@@ -314,6 +331,86 @@
                                 showRecipes();
                                 console.log(data);
                             },
+                            error: function(request, data, status){
+                                console.log("error");
+                            }
+                        })
+                    }
+
+                    let searchOne = document.getElementById("searchOne");
+                    let searchButtonOne = document.getElementById("searchButtonOne");
+                    
+                    //search system for the navigation bar box
+                    searchButtonOne.onclick = function(){
+                        //find the index from python script
+                        $.ajax({
+                            url: 'search.php',
+                            type: 'post',
+                            data: {
+                                find: searchOne.value
+                            },
+                            success: function(data, status) {
+                                if(data == "-1"){
+                                    searchResults.innerHTML = `<h3>Nothing Found!<h3>`;
+                                }else{
+                                    generateSearchOutput(data);
+                                }
+                                 searchOne.value = ""; 
+                                 showSearch();
+                            },
+                            error: function(request, data, status){
+                                console.log("error");
+                            }
+                        })
+                    }
+
+                    //generate the recipes based on the index passed back from python script
+                    function generateSearchOutput(index){
+                        $.ajax({
+                            type: "GET",
+                            //source
+                            url: "getDatabase.php", 
+                            //will run if file is retrived 
+                            success: function(data, status){
+                                searchResults.innerHTML = "";
+                                let actualData = JSON.parse(data);
+                                let currentObj = actualData[index][Object.keys(actualData[index])];
+
+                                let newBox = document.createElement('div');
+                                newBox.classList.add('box');
+                            
+                                newBox.dataset.name = actualData[index].Name;
+
+                                function setNewBox(){
+                                    newBox.innerHTML = `
+                                        <h3 style="color: brown"> ${currentObj.Name}</h3> 
+                                        <p><h4>Description:</h3> ${currentObj.Description}</p> 
+                                        <p><h4>Ingredients:</h3> ${currentObj.Ingredients}</p> 
+                                        <p> <h4>Instructions</h3> ${currentObj.Instructions}</p>`;
+                                }
+                                setNewBox();
+
+                                newBox.dataset.showing = "all";
+
+                                newBox.onclick = function() {
+                                    if(newBox.dataset.showing == "all"){
+                                        newBox.innerHTML = `<h3 style="color: brown">Instructions: ${currentObj.Name}</h3><ul>`;
+
+                                        for(let x = 0; x<currentObj.Instructions.length; x++){
+                                            newBox.innerHTML += `<li>${currentObj.Instructions[x]}</li>`;
+                                        }
+                                        newBox.innerHTML += "</ul>";
+                                        
+                                        newBox.dataset.showing = "instructions";
+                                    }else{
+                                        setNewBox();
+                                        newBox.dataset.showing = "all";
+                                    }
+                                }
+
+                                searchResults.appendChild(newBox);
+                            },
+                            //Will run if there's an error
                             error: function(request, data, status){
                                 console.log("error");
                             }
