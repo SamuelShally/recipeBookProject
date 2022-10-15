@@ -58,16 +58,15 @@
             </div>
 
             <div class = "b"> 
-
                     <!-- The info that was on the home page -->
                     <div class = "home" id="home">
                         <div class = "home-search">
                             <img src = "Images/fruit.jpeg" alt = "Fruit">
                             <h1>Find a Recipe</h1>
-                            <div>
-                                 <input id ="searchTwo" type="text" placeholder="Let's Find Some Recipes...">
-                            </div>
+                            <input id ="searchTwo" type="text" placeholder="Let's Find Some Recipes...">
                         </div>
+
+                        <button style="margin-left: 60%; opacity: 1; background-color: blueviolet; border-radius: 25px;" id="searchButtonTwo">Search!</button>
 
                         <div class = "home-text1">
                             <h2>Recipe Database</h2>
@@ -111,8 +110,8 @@
                             <h4>Shrey Mittal</h4>
                             <p>Shrey Mittal is a software engineer with plenty of experience in backend design. Mittal's Python script, coupled with his JSON database, allowed us to be able to display and add recipes. Additionally, Mittal created our search engine to incorporate substrings and fuzzy search.</p>
                             <img src = "Images/samoCharacter.png" alt = "Samo">
-                            <h4>Samo Shally</h4>
-                            <p>Samo Shally is a software engineer who has worked on both frontend and backend development. Shally worked on creating an efficient frontend using dividers and integrated our frontend and backend development using PHP and Ajax to display recipes from our database.</p>
+                            <h4>Samuel Shally</h4>
+                            <p>Samuel Shally is a software engineer who has worked on both frontend and backend development. Shally worked on creating an efficient frontend using dividers and integrated our frontend and backend development using PHP and Ajax to display recipes from our database.</p>
                             <img src = "Images/soniaCharacter.png" alt = "Sonia">
                             <h4>Sonia Jain</h4>
                             <p>Sonia Jain is a software engineer who primarily works in frontend. Jain coded and designed the frontend that you see now. Using HTML and CSS, Jain designed the graphical user interface with functionality and ease in mind. Additionally, she wrote the instructions page and about us page.</p>
@@ -355,10 +354,10 @@
                     }
 
                     let searchOne = document.getElementById("searchOne");
-                    let searchTwo = document.getElementById("");
+                    let searchTwo = document.getElementById("searchTwo");
 
                     let searchButtonOne = document.getElementById("searchButtonOne");
-                    let serchButtonTwo = document.getElementById("");
+                    let serchButtonTwo = document.getElementById("searchButtonTwo");
                     
                     //search system for the navigation bar box
                     searchButtonOne.onclick = function(){
@@ -386,6 +385,33 @@
                         })
                     }
 
+                    serchButtonTwo.onclick = function(){
+                        console.log("got here");
+                        //find the index from python script
+                        $.ajax({
+                            url: 'search.php',
+                            type: 'post',
+                            data: {
+                                find: (searchTwo.value).replaceAll(' ', '_')
+                            },
+                            success: function(data, status) {
+                                // console.log((searchOne.value).replaceAll(' ', '_'));
+                                console.log(data);
+                                if(data == "-1"){
+                                    searchResults.innerHTML = `<h3>Nothing Found!<h3>`;
+                                }else{
+                                    generateSearchOutput(data);
+                                }
+                                 searchOne.value = ""; 
+                                 showSearch();
+                            },
+                            error: function(request, data, status){
+                                console.log("error");
+                            }
+                        })
+                    }
+
+                    
                     //generate the recipes based on the index passed back from python script
                     function generateSearchOutput(index){
                         $.ajax({
