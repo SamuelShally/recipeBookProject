@@ -1,5 +1,5 @@
 import json
-import jaro
+from pyjarowinkler import distance
 import sys
 from os import path
 
@@ -58,7 +58,7 @@ def similar_substring(inputVal, lst):
     jaro_lst = []
     if (inputVal not in lst):
         for ind, val in enumerate(lst):
-            curr_jaro = jaro.jaro_winkler_metric(inputVal, val)
+            curr_jaro = distance.get_jaro_distance(inputVal, val)
             jaro_dict[ind] = curr_jaro
             jaro_lst.append(curr_jaro)
 
