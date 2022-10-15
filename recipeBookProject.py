@@ -23,14 +23,14 @@ def main():
         igCase = exact_string_ignore_case(input, recipeNames)
 
     else:
-        return exactVal;
+        print(exactVal)
 
     if (igCase == -1):
 
-        return similar_substring(input, recipeNames)
+        print(similar_substring(input, recipeNames))
 
     else:
-        return igCase
+        print(igCase)
 
 
 # given a string and list, returns the index of the string. If not, returns -1
