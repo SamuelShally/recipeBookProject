@@ -164,13 +164,7 @@ def add_recipe():
         for val in recipe[recipe_name]["instructions"]:
             print(val)
             input("Press enter to continue...")
-            
-    
 
 
-
-
-
-    
 
 add_recipe()

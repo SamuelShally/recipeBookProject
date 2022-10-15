@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f22d9fcc-d603-491b-9a2a-75433bc0b534" name="Changes" comment="Updating jaro winkler metric">
+    <list default="true" id="f22d9fcc-d603-491b-9a2a-75433bc0b534" name="Changes" comment="Making it read and write to json">
+      <change afterPath="$PROJECT_DIR$/databasequery.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipeBookProject.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipeBookProject.py" afterDir="false" />
     </list>
@@ -37,7 +38,29 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.databasequery">
+    <configuration name="databasequery" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/PDF_Reader/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/databasequery.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="recipeBookProject" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -60,6 +83,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.recipeBookProject" />
+      <item itemvalue="Python.databasequery" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -71,7 +98,9 @@
       <updated>1664904589063</updated>
       <workItem from="1664904591432" duration="8568000" />
       <workItem from="1665353983977" duration="6032000" />
-      <workItem from="1665471596812" duration="8888000" />
+      <workItem from="1665471596812" duration="9568000" />
+      <workItem from="1665706488640" duration="38000" />
+      <workItem from="1665779346049" duration="5657000" />
     </task>
     <task id="LOCAL-00001" summary="Adding config files">
       <created>1664912582691</created>
@@ -87,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665358406238</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Making it read and write to json">
+      <created>1665647372198</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665647372198</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,10 +143,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding config files" />
     <MESSAGE value="Updating jaro winkler metric" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating jaro winkler metric" />
+    <MESSAGE value="Making it read and write to json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Making it read and write to json" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/recipeBookProject$dataStorage.coverage" NAME="dataStorage Coverage Results" MODIFIED="1664906951909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend Code" />
-    <SUITE FILE_PATH="coverage/recipeBookProject$recipeBookProject.coverage" NAME="recipeBookProject Coverage Results" MODIFIED="1665644072785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/recipeBookProject$recipeBookProject.coverage" NAME="recipeBookProject Coverage Results" MODIFIED="1665810942522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/recipeBookProject$databasequery.coverage" NAME="databasequery Coverage Results" MODIFIED="1665812184289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
