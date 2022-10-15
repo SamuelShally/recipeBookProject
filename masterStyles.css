@@ -146,19 +146,16 @@ body{
     color: rgb(97, 97, 97);
 }
 
-.home-text1 a{
+.home-text1 img{
+    width: 400px;
+    border-radius: 50%;
     position: absolute;
     font-family: openSans-Regular;
-    background-color: #79933b;
-    color: #f3e6c9;
     font-size: 20px;
-    padding: 20px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin-left: 50%;
-    margin-top: 6%;
-    border-radius: 5px;
+    margin-left: 40%;
 }
 
 .home-text1 a:hover{
