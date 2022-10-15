@@ -64,19 +64,21 @@
                         <div class = "home-search">
                             <img src = "Images/fruit.jpeg" alt = "Fruit">
                             <h1>Find a Recipe</h1>
-                            <input type="text" placeholder="  Let's Find Some Recipes...">
+                            <div>
+                                 <input id ="searchTwo" type="text" placeholder="Let's Find Some Recipes...">
+                            </div>
                         </div>
 
                         <div class = "home-text1">
                             <h2>Recipe Database</h2>
                             <p>Don't know exactly what you're looking for? Checkout our database that has all the recipes we offer! Here you can find thousands of recipes that fit any of your needs. Once you find your desired recipe, simply click on it and gather all the information you need to recreate it!</p>
-                            <a id = "recipes2">Recipes Database</a>
+                            <a id = "databaseLinkOne">Recipes Database</a>
                         </div>
 
                         <div class = "home-text2">
                             <h2>Make Your Own</h2>
                             <p>Do you have a recipe that you think people will love? You can add your own recipe to our database and others can recreate your very own recipe themselves. Once you click on "Make a Recipe," you will be taken to a page where you can add all the details for your recipe. Once you're done, just click submit and your recipe will be present in our database. It's that easy!</p>
-                            <a id = "recipes2">Make Your Own</a>
+                            <a id = "makeYourOwnLinkOne">Make Your Own</a>
                         </div>
                     </div>
 
@@ -139,6 +141,21 @@
                 <h3>© 2022 - 2022 TheGroup - All Rights Reserved.</h3>    
             </div>
         </div>
+
+        <!-- extra button elements on home page -->
+        <script> 
+            let databaseLinkOne = document.getElementById("databaseLinkOne");
+            let makeYourOwnLinkOne = document.getElementById("makeYourOwnLinkOne");
+            
+            databaseLinkOne.onclick = function(){
+                showRecipes();
+                consol.log("got here");
+            }
+
+            makeYourOwnLinkOne.onclick = function(){
+                showAddRecipe();
+            }
+        </script>
 
           <!-- show and hide elements -->
           <script>
@@ -338,7 +355,10 @@
                     }
 
                     let searchOne = document.getElementById("searchOne");
+                    let searchTwo = document.getElementById("");
+
                     let searchButtonOne = document.getElementById("searchButtonOne");
+                    let serchButtonTwo = document.getElementById("");
                     
                     //search system for the navigation bar box
                     searchButtonOne.onclick = function(){
@@ -347,9 +367,10 @@
                             url: 'search.php',
                             type: 'post',
                             data: {
-                                find: searchOne.value
+                                find: (searchOne.value).replaceAll(' ', '_')
                             },
                             success: function(data, status) {
+                                console.log(data);
                                 if(data == "-1"){
                                     searchResults.innerHTML = `<h3>Nothing Found!<h3>`;
                                 }else{
