@@ -370,6 +370,7 @@
                                 find: (searchOne.value).replaceAll(' ', '_')
                             },
                             success: function(data, status) {
+                                console.log((searchOne.value).replaceAll(' ', '_'));
                                 console.log(data);
                                 if(data == "-1"){
                                     searchResults.innerHTML = `<h3>Nothing Found!<h3>`;

@@ -3,8 +3,7 @@ import jaro
 import sys
 from os import path
 
-filename = "data_storage.json"
-
+filename = "recipeDatabase.json"
 
 def main():
     with open(filename) as fp:
@@ -15,18 +14,19 @@ def main():
     for currDict in objects:
         recipeNames.append(list(currDict.keys())[0])
 
-    input = str(sys.argv)[1].replace("_", " ")
+    input = str(sys.argv[1]).replace("_", " ")
 
     exactVal = exact_string_comparison(input, recipeNames)
+    igCase = exact_string_ignore_case(input, recipeNames)
 
     if (exactVal == -1):
         igCase = exact_string_ignore_case(input, recipeNames)
 
     else:
         print(exactVal)
+        return
 
     if (igCase == -1):
-
         print(similar_substring(input, recipeNames))
 
     else:
