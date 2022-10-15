@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f22d9fcc-d603-491b-9a2a-75433bc0b534" name="Changes" comment="Making it read and write to json">
-      <change afterPath="$PROJECT_DIR$/databasequery.py" afterDir="false" />
+    <list default="true" id="f22d9fcc-d603-491b-9a2a-75433bc0b534" name="Changes" comment="Testing the new program to make sure it functions as intended">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipeBookProject.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipeBookProject.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databasequery.py" beforeDir="false" afterPath="$PROJECT_DIR$/databasequery.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +99,7 @@
       <workItem from="1665353983977" duration="6032000" />
       <workItem from="1665471596812" duration="9568000" />
       <workItem from="1665706488640" duration="38000" />
-      <workItem from="1665779346049" duration="5657000" />
+      <workItem from="1665779346049" duration="6780000" />
     </task>
     <task id="LOCAL-00001" summary="Adding config files">
       <created>1664912582691</created>
@@ -123,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665647372198</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Testing the new program to make sure it functions as intended">
+      <created>1665812452434</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665812452434</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,11 +150,12 @@
     <MESSAGE value="Adding config files" />
     <MESSAGE value="Updating jaro winkler metric" />
     <MESSAGE value="Making it read and write to json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Making it read and write to json" />
+    <MESSAGE value="Testing the new program to make sure it functions as intended" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing the new program to make sure it functions as intended" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/recipeBookProject$dataStorage.coverage" NAME="dataStorage Coverage Results" MODIFIED="1664906951909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Backend Code" />
     <SUITE FILE_PATH="coverage/recipeBookProject$recipeBookProject.coverage" NAME="recipeBookProject Coverage Results" MODIFIED="1665810942522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/recipeBookProject$databasequery.coverage" NAME="databasequery Coverage Results" MODIFIED="1665812184289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/recipeBookProject$databasequery.coverage" NAME="databasequery Coverage Results" MODIFIED="1665812420577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
